@@ -1,0 +1,304 @@
+@charset 'utf-8';
+/* 共通部分 */
+html {
+  font-size: 100%;
+  letter-spacing: 0.15em;
+  line-height: 1.8;
+  scroll-behavior: smooth;
+}
+:root {
+  --base-color: #ECF2E4;
+  --main-color: #A9BA8E;
+  --accent-color: #677C45;
+  --text: #6A6A6A;
+  --title-font: "Raleway", serif;
+  --text-font: "Noto Sans JP", serif;
+}
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+h1,
+h2 {
+  color: var(--text);
+  font-size: 48px;
+  font-family: var(--title-font);
+  font-weight: 600;
+  text-align: center;
+}
+p,
+a,
+li,
+table {
+  color: var(--text);
+  font-size: 16px;
+  font-family: var(--text-font);
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+#about,
+#speakers,
+#news {
+  padding: 6rem 0;
+}
+#ticket {
+  padding: 6rem 0 0;
+}
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  height: 64px;
+  z-index: 1;
+  background: rgba(225, 225, 225, .75);
+}
+.header-box {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+.logo {
+  color: var(--text);
+}
+.btn-menu {
+  padding: 6px 12px;
+  color: var(--text);
+  font-size: 14px;
+  border: 1px solid var(--text);
+  cursor: pointer;
+}
+.main-nav {
+  position: absolute;
+  z-index: 2;
+  top: 64px;
+  right: 0;
+  width: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(225, 225, 225, .75);
+  overflow: hidden;
+  transition: .5s;
+}
+.main-nav {
+  text-align: center;
+}
+.main-nav a {
+  color: var(--text);
+}
+.main-nav a:hover {
+  display: block;
+  color: var(--text);
+}
+.main-nav.open-menu {
+  width: 100%;
+  padding: 1rem;
+}
+.main-nav li {
+  margin: 16px 0;
+  color: var(--text);
+}
+/* Hero */
+#hero {
+  height: 100vh;
+  background-color: var(--main-color);
+  background-image: url('../images/penguin-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-blend-mode: screen;
+  animation: bg-color 6s infinite; /* キーフレーム */
+}
+/* About */
+#about .wrapper {
+  background: linear-gradient(var(--base-color), var(--accent-color));
+  -webkit-background-clip: text;  /* 背景を文字の色でくり抜く */
+  -webkit-text-fill-color: transparent;  /* テキストを透明 */
+}
+/* Speakers */
+#speakers h2 {
+  background: linear-gradient(#C9D5CB, #396543);
+  -webkit-background-clip: text;  /* 背景を文字の色でくり抜く */
+  -webkit-text-fill-color: transparent;  /* テキストを透明 */
+}
+/* News */
+#news {
+  /* padding: 6rem 0; */
+  background-image: linear-gradient(#FFF2F0, #86514B);
+}
+/* Ticket */
+#ticket {
+  /* padding: 6rem 0; */
+  background-image: linear-gradient(#E1D4DB, #6F3E56);
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+}
+/* ボタン アニメーション */
+.btn {
+  display: inline-block;
+  width: calc(100% - 32px);
+  margin: 32px 0 64px;
+  padding: 4px;
+  background: #000000;
+  color: white;
+  text-align: center;
+  transition: background .3s;
+}
+.btn:hover {
+  background: var(--accent-color);
+}
+/* キーフレーム */
+@keyframes bg-color {
+  0% {
+    background-color: var(--main-color)
+  }
+  50% {
+    background-color: #C99E9A;
+  }
+  100% {
+    background-color: #7D6786;
+  }
+}
+/* #Hero */
+#hero .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#news h2,
+#ticket h2 {
+  color: #ffffff;
+}
+/* #About */
+#about p {
+  margin-top: 8px;
+}
+.about-img {
+  width: 100%;
+  object-fit: cover;
+  margin-top: 16px;
+}
+/* #News */
+table {
+  margin: 16px auto 0;
+  color: #ffffff;
+  text-align: left;
+}
+th, td {
+  padding: 8px;
+}
+td {
+  padding-left: 32px;
+}
+/* #Speakers */
+#speakers {
+  width: calc(100% - 32px);
+  max-width: 1100px;
+  margin: 16px auto 0;
+}
+.speakers-box {
+  display: flex;
+  gap: 16px;
+}
+.speakers-box:nth-child(3) {
+  margin-top: 16px;
+}
+.icon {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.name {
+  font-size: 18px;
+  font-weight: 600;
+}
+.text {
+  margin-top: 4px;
+}
+/* #Ticket */
+#ticket {
+  text-align: center;
+}
+.ticket-box {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#ticket p {
+  display: inline-block;
+  width: calc(100% - 32px);
+  margin-top: 16px;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: left;
+}
+.form {
+  display: inline-block;
+  width: calc(100% - 32px);
+  padding: 4px;
+  margin-top: 4px;
+  background-color: rgba(225, 225, 225, .75);
+}
+/* Footer */
+#ticket footer p {
+  position: relative;
+  padding: 16px;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+}
+footer p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background-color: #ffffff;
+  transform: translateX(-0%);
+}
+
+@media (min-width: 768px) {
+  /* Header */
+  .sp {
+    display: none;
+  }
+  .main-nav {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: none;
+    overflow: visible;
+  }
+  .main-nav li {
+    margin-left: 32px;
+  }
+  /* #Speakers */
+  #speakers {
+    width: 80%;
+  }
+  .speakers-box:nth-child(3) {
+    margin-top: 32px;
+  }
+  .icon {
+    width: 96px;
+    height: 96px;
+  }
+  /* #Ticket */
+  .btn,
+  #ticket .ticket-box p,
+  .form {
+    width: 50%;
+  }
+}
